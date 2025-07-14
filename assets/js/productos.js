@@ -1,17 +1,17 @@
-// Array de productos
+// Array de productos con rutas absolutas válidas para GitHub Pages
 const productos = [
-    { id: 1, nombre: "Bolso Rojo", precio: 39, imagen: "../assets/img/bolso-rojo.jpg" },
-    { id: 2, nombre: "Bolso Azul", precio: 32, imagen: "../assets/img/bolso-azul.jpg" },
-    { id: 3, nombre: "Bolso Amarillo", precio: 45, imagen: "../assets/img/bolso-amarillo.jpg" },
-    { id: 4, nombre: "Bolso Marron", precio: 36, imagen: "../assets/img/bolso-marron.jpg" },
-    { id: 5, nombre: "Bolso Rosa", precio: 38, imagen: "../assets/img/bolsorosa.jpg" },
-    { id: 6, nombre: "Bolso Rosa/Verde", precio: 49, imagen: "../assets/img/bolso-rosaverde.jpg" }
+    { id: 1, nombre: "Bolso Rojo", precio: 39, imagen: "/assets/img/bolso-rojo.jpg" },
+    { id: 2, nombre: "Bolso Azul", precio: 32, imagen: "/assets/img/bolso-azul.jpg" },
+    { id: 3, nombre: "Bolso Amarillo", precio: 45, imagen: "/assets/img/bolso-amarillo.jpg" },
+    { id: 4, nombre: "Bolso Marron", precio: 36, imagen: "/assets/img/bolso-marron.jpg" },
+    { id: 5, nombre: "Bolso Rosa", precio: 38, imagen: "/assets/img/bolsorosa.jpg" },
+    { id: 6, nombre: "Bolso Rosa/Verde", precio: 49, imagen: "/assets/img/bolso-rosaverde.jpg" }
 ];
 
 // Obtener carrito del localStorage o iniciar vacío
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// Mostrar productos
+// Mostrar productos en la página
 const contenedor = document.getElementById("productos");
 
 function mostrarProductos(lista) {
@@ -21,18 +21,19 @@ function mostrarProductos(lista) {
         const div = document.createElement("div");
         div.classList.add("producto-card");
 
+        // Verificar si ya está en el carrito
         const itemEnCarrito = carrito.find(p => p.id === producto.id);
         const cantidad = itemEnCarrito ? itemEnCarrito.cantidad : 0;
 
         div.innerHTML = `
-        <img src="${producto.imagen}" alt="${producto.nombre}">
-        <h3>${producto.nombre}</h3>
-        <p>€${producto.precio}</p>
-        <button class="btn agregar-btn" data-id="${producto.id}">
-        Agregar al carrito
-        </button>
-        <p class="cantidad-texto">Cantidad en carrito: <span id="cantidad-${producto.id}">${cantidad}</span></p>
-    `;
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <h3>${producto.nombre}</h3>
+            <p>€${producto.precio}</p>
+            <button class="btn agregar-btn" data-id="${producto.id}">
+                Agregar al carrito
+            </button>
+            <p class="cantidad-texto">Cantidad en carrito: <span id="cantidad-${producto.id}">${cantidad}</span></p>
+        `;
 
         contenedor.appendChild(div);
     });
@@ -40,7 +41,7 @@ function mostrarProductos(lista) {
     asignarEventosAgregar();
 }
 
-// Asignar eventos a los botones de "Agregar al carrito"
+// Asignar eventos a botones "Agregar al carrito"
 function asignarEventosAgregar() {
     const botones = document.querySelectorAll(".agregar-btn");
     botones.forEach(boton => {
@@ -51,7 +52,7 @@ function asignarEventosAgregar() {
     });
 }
 
-// Agregar producto o aumentar cantidad
+// Agregar producto al carrito o aumentar su cantidad
 function agregarAlCarrito(id) {
     const productoExistente = carrito.find(p => p.id === id);
 
@@ -66,7 +67,7 @@ function agregarAlCarrito(id) {
     actualizarContadorCarrito();
     actualizarCantidadVisible(id);
 
-    // Mostrar toast de confirmación con SweetAlert2
+    // Mostrar confirmación con SweetAlert2
     Swal.fire({
         icon: 'success',
         title: '¡Producto agregado!',
@@ -79,7 +80,7 @@ function agregarAlCarrito(id) {
     });
 }
 
-// Actualizar contador de ítems totales en el header
+// Actualizar contador de carrito en el header
 function actualizarContadorCarrito() {
     const contador = document.getElementById("contador-carrito");
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -94,7 +95,7 @@ function actualizarContadorCarrito() {
     }
 }
 
-// Actualizar cantidad visible debajo del producto
+// Mostrar cantidad actual debajo de cada producto
 function actualizarCantidadVisible(id) {
     const item = carrito.find(p => p.id === id);
     const span = document.getElementById(`cantidad-${id}`);
@@ -103,6 +104,6 @@ function actualizarCantidadVisible(id) {
     }
 }
 
-// Inicializar
+// Inicialización
 mostrarProductos(productos);
 actualizarContadorCarrito();
