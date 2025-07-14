@@ -1,11 +1,11 @@
 // Array de productos con rutas absolutas válidas para GitHub Pages
 const productos = [
-    { id: 1, nombre: "Bolso Rojo", precio: 39, imagen: "/assets/img/bolso-rojo.jpg" },
-    { id: 2, nombre: "Bolso Azul", precio: 32, imagen: "/assets/img/bolso-azul.jpg" },
-    { id: 3, nombre: "Bolso Amarillo", precio: 45, imagen: "/assets/img/bolso-amarillo.jpg" },
-    { id: 4, nombre: "Bolso Marron", precio: 36, imagen: "/assets/img/bolso-marron.jpg" },
-    { id: 5, nombre: "Bolso Rosa", precio: 38, imagen: "/assets/img/bolsorosa.jpg" },
-    { id: 6, nombre: "Bolso Rosa/Verde", precio: 49, imagen: "/assets/img/bolso-rosaverde.jpg" }
+    { id: 1, nombre: "Bolso Rojo", precio: 39, imagen: "../assets/img/bolso-rojo.jpg" },
+    { id: 2, nombre: "Bolso Azul", precio: 32, imagen: "../assets/img/bolso-azul.jpg" },
+    { id: 3, nombre: "Bolso Amarillo", precio: 45, imagen: "../assets/img/bolso-amarillo.jpg" },
+    { id: 4, nombre: "Bolso Marron", precio: 36, imagen: "../assets/img/bolso-marron.jpg" },
+    { id: 5, nombre: "Bolso Rosa", precio: 38, imagen: "../assets/img/bolsorosa.jpg" },
+    { id: 6, nombre: "Bolso Rosa/Verde", precio: 49, imagen: "../assets/img/bolso-rosaverde.jpg" }
 ];
 
 // Obtener carrito del localStorage o iniciar vacío
