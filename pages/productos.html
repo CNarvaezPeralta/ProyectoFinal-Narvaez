@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colección - LULE</title>
+
+    <!-- Tipografías -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@500&display=swap"
+        rel="stylesheet">
+
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+
+    <!-- HEADER con marca, menú y carrito -->
+    <header>
+        <h1>LULE</h1>
+
+        <!-- Botón de menú hamburguesa -->
+        <button id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+
+        <!-- Navegación -->
+        <nav id="nav" class="nav-cerrado">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="productos.html">Colección</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+
+        <!-- Acceso al carrito con contador -->
+        <a href="carrito.html" class="btn-carrito">
+            👜 Carrito <span id="contador-carrito">0</span>
+        </a>
+    </header>
+
+    <!-- MAIN con catálogo de productos -->
+    <main>
+        <section class="catalogo">
+            <h2>Nuestra colección</h2>
+
+            <!-- Contenedor dinámico de productos -->
+            <div id="productos" class="grid-productos">
+                <!-- JS insertará los productos acá -->
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER con redes sociales -->
+    <footer>
+        <p>&copy; 2025 LULE</p>
+        <div class="redes">
+            <a href="https://www.instagram.com/tuusuario" target="_blank">
+                <img src="../assets/img/icono-instagram.svg" alt="Instagram" class="logo-red">
+            </a>
+            <a href="https://twitter.com/tuusuario" target="_blank">
+                <img src="../assets/img/icono-X.svg" alt="X" class="logo-red">
+            </a>
+        </div>
+    </footer>
+    
+    <!-- Librería externa (SweetAlert2) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Scripts del proyecto -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/productos.js"></script>
+</body>
+
+</html>

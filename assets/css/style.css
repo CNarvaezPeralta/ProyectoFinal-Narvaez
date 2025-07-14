@@ -1,0 +1,421 @@
+/* RESET Y FUENTES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #faf9f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    background-color: #fff;
+    padding: 25px;
+    border-bottom: 1px solid #eaeaea;
+    position: relative;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #5c5c5c;
+}
+
+/* Botón hamburguesa: siempre visible */
+#menu-toggle {
+    display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    z-index: 11;
+}
+
+/* Menú cerrado */
+.nav-cerrado {
+    display: none;
+}
+
+/* Menú abierto (overlay vertical) */
+.nav-abierto {
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    z-index: 10;
+}
+
+.nav-abierto ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    gap: 10px;
+    list-style: none;
+}
+
+/* Estilo de los links del menú */
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: #888;
+}
+
+
+
+/* Mostrar el botón en móviles */
+@media (max-width: 767px) {
+    #menu-toggle {
+        display: block;
+    }
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 80vh;
+    /* altura en móvil */
+    text-align: center;
+    background: url('../img/hero.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* En pantallas grandes (tablet y desktop) */
+@media (min-width: 768px) {
+    .hero {
+        height: 100vh;
+    }
+}
+
+/* Capa blanca semitransparente */
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.45);
+    z-index: 1;
+}
+
+.hero h2,
+.hero .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+/* BOTÓN */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #eaeaea;
+    margin-top: auto;
+}
+
+footer .redes {
+    margin-top: 10px;
+}
+
+footer .redes a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer .logo-red {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+footer .logo-red:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.catalogo h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #444;
+}
+
+/* CONTENEDOR DE PRODUCTOS */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* 1 columna por defecto (móvil) */
+    gap: 20px;
+    padding: 30px;
+}
+
+/* En pantallas mayores a 768px → 2 columnas */
+@media (min-width: 768px) {
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* TARJETA DE PRODUCTO */
+.producto-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-4px);
+}
+
+.producto-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.producto-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.producto-card p {
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.producto-card button {
+    padding: 10px 16px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.producto-card button:hover {
+    background-color: #444;
+}
+
+.carrito {
+    padding: 40px 20px;
+}
+
+.carrito h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.carrito-lista {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.eliminar-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.eliminar-btn:hover {
+    background-color: #c0392b;
+}
+
+.carrito-total {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.carrito-botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.formulario {
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.formulario h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.mensaje {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.resumen {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.resumen h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.resumen ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.resumen li {
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#resumen-total {
+    font-weight: bold;
+    text-align: right;
+}
+
+.btn-carrito {
+    display: inline-block;
+    margin: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    background: #fff;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#contador-carrito {
+    background-color: rgb(95, 90, 91);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    margin-left: 6px;
+    font-size: 0.9rem;
+}
+
+.cantidad-texto {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.item-carrito {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+}
+
+.carrito-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info-producto {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.eliminar-uno {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.eliminar-uno:hover {
+    background-color: #c0392b;
+}

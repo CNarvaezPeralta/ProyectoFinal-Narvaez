@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finalizar compra - LULE</title>
+
+    <!-- Tipografías de Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@500&display=swap"
+        rel="stylesheet">
+
+    <!-- Enlace a tu hoja de estilos -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+    <!-- HEADER: título + menú hamburguesa -->
+    <header>
+        <h1>LULE</h1>
+        <button id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+        <nav id="nav" class="nav-cerrado">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="productos.html">Colección</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección principal del formulario -->
+        <section class="formulario">
+            <h2>Finalizar compra</h2>
+
+            <!-- Resumen del pedido -->
+            <div id="resumen" class="resumen">
+                <h3>Resumen de tu pedido</h3>
+                <ul id="resumen-lista"></ul> <!-- Lista dinámica con JS -->
+                <p id="resumen-total"></p>   <!-- Total calculado -->
+            </div>
+
+            <!-- Formulario de contacto y envío -->
+            <form id="form-compra" novalidate>
+                <label for="nombre">Nombre completo*</label>
+                <input type="text" id="nombre" name="nombre" required />
+
+                <label for="email">Correo electrónico*</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="direccion">Dirección de envío*</label>
+                <input type="text" id="direccion" name="direccion" required />
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" />
+
+                <button type="submit" class="btn">Confirmar pedido</button>
+            </form>
+
+            <!-- Mensaje de validación -->
+            <p id="mensaje" class="mensaje"></p>
+        </section>
+    </main>
+
+    <!-- FOOTER con enlaces a redes sociales -->
+    <footer>
+        <p>&copy; 2025 LULE</p>
+        <div class="redes">
+            <a href="https://www.instagram.com/tuusuario" target="_blank">
+                <img src="../assets/img/icono-instagram.svg" alt="Instagram" class="logo-red" />
+            </a>
+            <a href="https://twitter.com/tuusuario" target="_blank">
+                <img src="../assets/img/icono-X.svg" alt="X" class="logo-red" />
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts de funcionalidad -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../assets/js/main.js"></script> <!-- menú hamburguesa -->
+    <script src="../assets/js/formulario.js"></script> <!-- lógica del formulario -->
+
+</body>
+
+</html>

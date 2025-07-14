@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LULE</title>
+
+    <!-- Tipografías de Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@500&display=swap"
+        rel="stylesheet">
+
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+    <!-- HEADER: Logo + menú de navegación -->
+    <header>
+        <h1>LULE</h1>
+
+        <!-- Botón para abrir/cerrar el menú hamburguesa -->
+        <button id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+
+        <!-- Menú de navegación -->
+        <nav id="nav" class="nav-cerrado">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pages/productos.html">Colección</a></li>
+                <li><a href="pages/carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN: sección de bienvenida/hero -->
+    <main>
+        <section class="hero">
+            <!-- Overlay visual si tenés imagen de fondo -->
+            <div class="overlay"></div>
+            <h2>Bolsos hechos a mano con color y alma</h2>
+            <a href="pages/productos.html" class="btn">Ver colección</a>
+        </section>
+    </main>
+
+    <!-- FOOTER: derechos y redes sociales -->
+    <footer>
+        <p>&copy; 2025 LULE</p>
+        <div class="redes">
+            <a href="https://www.instagram.com/bylule__" target="_blank">
+                <img src="assets/img/icono-instagram.svg" alt="Instagram" class="logo-red">
+            </a>
+            <a href="https://twitter.com/tuusuario" target="_blank">
+                <img src="assets/img/icono-X.svg" alt="X" class="logo-red">
+            </a>
+        </div>
+    </footer>
+
+    <!-- Script para la funcionalidad del menú hamburguesa -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
