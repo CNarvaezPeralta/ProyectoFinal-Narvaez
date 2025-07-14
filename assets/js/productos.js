@@ -1,4 +1,4 @@
-// Array de productos con rutas absolutas válidas para GitHub Pages
+// Array de productos con rutas relativas válidas para GitHub Pages
 const productos = [
     { id: 1, nombre: "Bolso Rojo", precio: 39, imagen: "../assets/img/bolso-rojo.jpg" },
     { id: 2, nombre: "Bolso Azul", precio: 32, imagen: "../assets/img/bolso-azul.jpg" },
@@ -21,7 +21,6 @@ function mostrarProductos(lista) {
         const div = document.createElement("div");
         div.classList.add("producto-card");
 
-        // Verificar si ya está en el carrito
         const itemEnCarrito = carrito.find(p => p.id === producto.id);
         const cantidad = itemEnCarrito ? itemEnCarrito.cantidad : 0;
 
@@ -41,7 +40,6 @@ function mostrarProductos(lista) {
     asignarEventosAgregar();
 }
 
-// Asignar eventos a botones "Agregar al carrito"
 function asignarEventosAgregar() {
     const botones = document.querySelectorAll(".agregar-btn");
     botones.forEach(boton => {
@@ -52,7 +50,6 @@ function asignarEventosAgregar() {
     });
 }
 
-// Agregar producto al carrito o aumentar su cantidad
 function agregarAlCarrito(id) {
     const productoExistente = carrito.find(p => p.id === id);
 
@@ -67,7 +64,7 @@ function agregarAlCarrito(id) {
     actualizarContadorCarrito();
     actualizarCantidadVisible(id);
 
-    // Mostrar confirmación con SweetAlert2
+    // SweetAlert2
     Swal.fire({
         icon: 'success',
         title: '¡Producto agregado!',
@@ -80,7 +77,6 @@ function agregarAlCarrito(id) {
     });
 }
 
-// Actualizar contador de carrito en el header
 function actualizarContadorCarrito() {
     const contador = document.getElementById("contador-carrito");
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -95,7 +91,6 @@ function actualizarContadorCarrito() {
     }
 }
 
-// Mostrar cantidad actual debajo de cada producto
 function actualizarCantidadVisible(id) {
     const item = carrito.find(p => p.id === id);
     const span = document.getElementById(`cantidad-${id}`);
